@@ -43,9 +43,23 @@ while (true)
     }
 
 }
+double shin;
+while (true)
+{
+    Console.WriteLine("введите разницу размера виших шин с нормой вашей машины");
+    try
+    {
+        shin = double.Parse(Console.ReadLine());
+        break;
+    }
+    catch
+    {
+        Console.WriteLine("enter number only ");
+    }
 
+}
 
-double calculate(int type,int speed)
+double calculate(int type,int speed,double shin)
 {
     double trueType = 0.7;
     if (type == 1)
@@ -60,7 +74,7 @@ double calculate(int type,int speed)
     {
         trueType = 0.02;
     }
-    return (speed * speed) / (254 * trueType);
+    return (speed * speed) / (254 * trueType) + shin;
 }
 
-Console.WriteLine("ваш тормозной путь = "+calculate(type,speed) + " метров");
+Console.WriteLine("ваш тормозной путь = "+calculate(type,speed,shin) + " метров");
