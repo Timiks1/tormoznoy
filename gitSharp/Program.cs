@@ -1,8 +1,48 @@
-﻿Console.WriteLine("введите ваш тип покрытия:\n1 - сухой асфальт\n2 - мокрый асфльт\n3 - асфальт покрытый снегом\n4 - асфальт покрытый льдом");
-int type = int.Parse(Console.ReadLine());
-Console.WriteLine("введите вашу скорость в км/ч");
-int speed = int.Parse(Console.ReadLine());
+﻿
+int type;
+while (true)
+{
+    Console.WriteLine("введите ваш тип покрытия:\n1 - сухой асфальт\n2 - мокрый асфльт\n3 - асфальт покрытый снегом\n4 - асфальт покрытый льдом");
+    try
+    {
+         type = int.Parse(Console.ReadLine());
+        if (type == 1 || type == 2 || type == 3 || type == 4)
+        {
+            break;
+        }
+        else
+        {
+            Console.WriteLine("choose right number");
+        }
+    }
+    catch
+    {
+        Console.WriteLine("enter number only ");
+    }
 
+}
+int speed;
+while (true)
+{
+    Console.WriteLine("введите вашу скорость в км/ч");
+    try
+    {
+         speed = int.Parse(Console.ReadLine());
+        if (speed > 0 && speed < 300)
+        {
+            break;
+        }
+        else
+        {
+            Console.WriteLine("enter possible speed");
+        }
+    }
+    catch
+    {
+        Console.WriteLine("enter number only ");
+    }
+
+}
 
 
 double calculate(int type,int speed)
